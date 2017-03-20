@@ -1,5 +1,8 @@
 package edu.hackeru;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Arrays;
 
 /**
@@ -7,8 +10,13 @@ import java.util.Arrays;
  */
 public class Movie {
     //properties
+    @Expose
+    @SerializedName("title")
     private String title;
+
+
     private String image;
+
     private int releaseYear;
     private double rating;
     private String[] genre;
