@@ -1,10 +1,29 @@
 package edu.hackeru;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class IO {
     public static Scanner scanner = new Scanner(System.in);
+
+
+    public static String read(InputStream in) throws IOException {
+        //Close the Stream
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(in))){
+
+            String line = null;
+            StringBuilder builder = new StringBuilder();
+
+            while ((line = reader.readLine()) != null) {
+                builder.append(line);
+            }
+            return builder.toString();
+        }
+    }
 
     private IO() {
     }
